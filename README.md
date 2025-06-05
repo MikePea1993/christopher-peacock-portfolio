@@ -1,46 +1,73 @@
-# Getting Started with Create React App
+# Christopher Peacock - Professional Portfolio
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> Self-taught developer turned entrepreneur | From zero to SaaS founder in 9 months
 
-## Available Scripts
+[![Live Demo](https://img.shields.io/badge/Live-Demo-red)](https://christopher-peacock-portfolio.vercel.app)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black)](https://github.com/YOUR_USERNAME/christopher-peacock-portfolio)
 
-In the project directory, you can run:
+## 🚀 About Christopher
 
-### `npm start`
+Christopher Peacock is a remarkable self-taught developer who started coding in January 2024 and founded Opti Compliance by October 2024. His journey showcases dedication, rapid learning, and entrepreneurial excellence.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Key Achievements
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- 🏆 **Alacrity Program Graduate** - Selected over university graduates
+- 🥇 **Top 6% on TryHackMe** - Cybersecurity excellence
+- 🛡️ **Microsoft Security Certified**
+- 🏢 **Chief Innovation Officer** at Opti Compliance
+- ⚡ **9 Months** from zero to SaaS founder
 
-### `npm test`
+## 💼 Featured Projects
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+### Opti Compliance - SaaS Platform
 
-### `npm run build`
+Revolutionary fire risk assessment platform serving UK consultancies
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Tech**: Vue.js, Laravel, Tailwind CSS, PHP, MySQL, AWS
+- **Features**: No-code PDF generator, AI-powered compliance monitoring
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Wales & West Utilities Calculator
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Smart productivity tool for gas network operations
 
-### `npm run eject`
+- **Tech**: HTML, CSS, JavaScript
+- **Impact**: Still in active use by enterprise team
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+## 🛠️ Technologies
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+**Frontend & UI**
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+- Vue.js, HTML5, CSS3, JavaScript, Tailwind CSS
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+**Backend & Database**
 
-## Learn More
+- Laravel, PHP, Python, MySQL
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+**Cloud & Tools**
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- AWS, Git, VS Code
+
+## 🎯 Portfolio Features
+
+- ✨ Smooth scroll animations
+- 📱 Fully responsive design
+- 🎭 Interactive background effects
+- ⚡ Fast loading and optimized
+- 🎨 Professional black/red theme
+
+## 🚀 Quick Start
+
+```bash
+# Clone the repository
+git clone https://github.com/YOUR_USERNAME/christopher-peacock-portfolio.git
+
+# Install dependencies
+cd christopher-peacock-portfolio
+npm install
+
+# Start development server
+npm start
+
+# Build for production
+npm run build
+```

@@ -16,7 +16,7 @@ const Hero = () => {
   }, []);
 
   return (
-    <section className="h-screen flex items-center justify-center overflow-hidden bg-black">
+    <section className="min-h-screen flex items-center justify-center overflow-hidden bg-black px-4 sm:px-6 lg:px-8">
       {/* Dynamic Background */}
       <div className="absolute inset-0">
         {/* Animated mesh gradient */}
@@ -40,17 +40,17 @@ const Hero = () => {
 
         {/* Animated geometric shapes */}
         <div className="absolute inset-0">
-          <div className="absolute top-20 left-20 w-2 h-2 bg-red-500 rounded-full animate-pulse opacity-60" />
+          <div className="absolute top-10 sm:top-20 left-10 sm:left-20 w-2 h-2 bg-red-500 rounded-full animate-pulse opacity-60" />
           <div
-            className="absolute top-40 right-32 w-1 h-1 bg-red-400 rounded-full animate-pulse opacity-40"
+            className="absolute top-20 sm:top-40 right-16 sm:right-32 w-1 h-1 bg-red-400 rounded-full animate-pulse opacity-40"
             style={{ animationDelay: "1s" }}
           />
           <div
-            className="absolute bottom-32 left-1/4 w-1.5 h-1.5 bg-red-600 rounded-full animate-pulse opacity-50"
+            className="absolute bottom-16 sm:bottom-32 left-1/4 w-1.5 h-1.5 bg-red-600 rounded-full animate-pulse opacity-50"
             style={{ animationDelay: "2s" }}
           />
           <div
-            className="absolute bottom-20 right-20 w-1 h-1 bg-red-300 rounded-full animate-pulse opacity-30"
+            className="absolute bottom-10 sm:bottom-20 right-10 sm:right-20 w-1 h-1 bg-red-300 rounded-full animate-pulse opacity-30"
             style={{ animationDelay: "0.5s" }}
           />
         </div>
@@ -75,85 +75,87 @@ const Hero = () => {
               linear-gradient(rgba(220, 38, 38, 0.5) 1px, transparent 1px),
               linear-gradient(90deg, rgba(220, 38, 38, 0.5) 1px, transparent 1px)
             `,
-            backgroundSize: "50px 50px",
+            backgroundSize: "25px 25px", // Smaller on mobile
           }}
         />
       </div>
 
       {/* Main Content */}
-      <div className="relative z-10 text-center px-6 max-w-6xl mx-auto">
+      <div className="relative z-10 text-center w-full max-w-6xl mx-auto">
         {/* Animated intro text */}
-        <div className="mb-4 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.2s_forwards]">
-          <span className="text-red-400 text-sm uppercase tracking-widest font-medium">
+        <div className="mb-3 sm:mb-4 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.2s_forwards]">
+          <span className="text-red-400 text-xs sm:text-sm uppercase tracking-widest font-medium px-2">
             Chief Innovation Officer & SaaS Founder
           </span>
         </div>
 
         {/* Main heading with dramatic effect */}
         <h1
-          className="text-6xl md:text-8xl lg:text-9xl font-black mb-8 opacity-0 animate-[fadeInUp_1s_ease-out_0.4s_forwards]"
+          className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-6 sm:mb-8 opacity-0 animate-[fadeInUp_1s_ease-out_0.4s_forwards] leading-none"
           style={{ fontFamily: "Rajdhani, sans-serif" }}
         >
           <span className="block text-white">CHRISTOPHER</span>
-          <span className="block text-red-500 transform -translate-y-4">
+          <span className="block text-red-500 transform -translate-y-2 sm:-translate-y-4">
             PEACOCK
           </span>
         </h1>
 
-        {/* Tagline */}
-        <div className="mb-12 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.8s_forwards]">
-          <p className="text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
+        {/* Tagline*/}
+        <div className="mb-8 sm:mb-12 opacity-0 animate-[fadeInUp_0.8s_ease-out_0.8s_forwards] px-2">
+          <p className="text-lg sm:text-xl md:text-2xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             Self-taught developer turned entrepreneur —{" "}
             <span className="text-red-400 font-semibold">
               from zero to SaaS founder in 9 months
             </span>
           </p>
-          <p className="text-lg text-gray-400 mt-4 max-w-3xl mx-auto">
+          <p className="text-base sm:text-lg text-gray-400 mt-3 sm:mt-4 max-w-3xl mx-auto">
             Building technology solutions that streamline real-world industries
           </p>
         </div>
 
         {/* Achievement Stats */}
-        <div className="flex flex-wrap justify-center gap-8 mb-16 opacity-0 animate-[fadeInUp_0.8s_ease-out_1s_forwards]">
+        <div className="grid grid-cols-2 sm:flex sm:flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 mb-10 sm:mb-16 opacity-0 animate-[fadeInUp_0.8s_ease-out_1s_forwards] px-2">
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-red-400">9</div>
-            <div className="text-sm text-gray-400 uppercase tracking-wider">
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-red-400">
+              9
+            </div>
+            <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider">
               Months to SaaS
             </div>
           </div>
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-red-400">
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-red-400">
               Top 6%
             </div>
-            <div className="text-sm text-gray-400 uppercase tracking-wider">
+            <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider">
               TryHackMe
             </div>
           </div>
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-red-400">
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-red-400">
               2024
             </div>
-            <div className="text-sm text-gray-400 uppercase tracking-wider">
+            <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider">
               Started Coding
             </div>
           </div>
           <div className="text-center">
-            <div className="text-3xl md:text-4xl font-bold text-red-400">
+            <div className="text-2xl sm:text-3xl md:text-4xl font-bold text-red-400">
               CIO
             </div>
-            <div className="text-sm text-gray-400 uppercase tracking-wider">
+            <div className="text-xs sm:text-sm text-gray-400 uppercase tracking-wider">
               Opti Compliance
             </div>
           </div>
         </div>
 
-        {/* CTA Buttons with enhanced design */}
-        <div className="flex flex-col sm:flex-row gap-6 justify-center opacity-0 animate-[fadeInUp_0.8s_ease-out_1.2s_forwards]">
-          <button className="group relative px-10 py-5 bg-gradient-to-r from-red-600 to-red-700 text-white font-bold text-lg rounded-none uppercase tracking-wider transition-all duration-300 hover:scale-105 overflow-hidden">
+        {/* CTA Buttons - mobile-friendly stacking */}
+        <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center opacity-0 animate-[fadeInUp_0.8s_ease-out_1.2s_forwards] px-2">
+          <button className="group relative px-6 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-red-600 to-red-700 text-white font-bold text-base sm:text-lg rounded-none uppercase tracking-wider transition-all duration-300 hover:scale-105 overflow-hidden w-full sm:w-auto">
             <span className="relative z-10 flex items-center justify-center gap-3">
               View My Work
               <svg
-                className="w-5 h-5 group-hover:translate-x-1 transition-transform"
+                className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -169,11 +171,11 @@ const Hero = () => {
             <div className="absolute inset-0 bg-gradient-to-r from-red-700 to-red-800 transform translate-y-full group-hover:translate-y-0 transition-transform duration-300" />
           </button>
 
-          <button className="group px-10 py-5 border-2 border-red-600 text-red-400 font-bold text-lg rounded-none uppercase tracking-wider transition-all duration-300 hover:bg-red-600 hover:text-white hover:scale-105">
+          <button className="group px-6 sm:px-10 py-4 sm:py-5 border-2 border-red-600 text-red-400 font-bold text-base sm:text-lg rounded-none uppercase tracking-wider transition-all duration-300 hover:bg-red-600 hover:text-white hover:scale-105 w-full sm:w-auto">
             <span className="flex items-center justify-center gap-3">
               Get In Touch
               <svg
-                className="w-5 h-5 group-hover:rotate-45 transition-transform"
+                className="w-4 h-4 sm:w-5 sm:h-5 group-hover:rotate-45 transition-transform"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -191,17 +193,17 @@ const Hero = () => {
       </div>
 
       {/* Scroll indicator */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2">
+      <div className="absolute bottom-6 sm:bottom-8 left-1/2 transform -translate-x-1/2">
         <div className="flex flex-col items-center text-red-400 animate-bounce">
           <span className="text-xs uppercase tracking-widest mb-2 opacity-60">
             Scroll
           </span>
-          <div className="w-0.5 h-8 bg-gradient-to-b from-red-600 to-transparent" />
+          <div className="w-0.5 h-6 sm:h-8 bg-gradient-to-b from-red-600 to-transparent" />
         </div>
       </div>
 
-      {/* Side decorations */}
-      <div className="absolute left-8 top-1/2 transform -translate-y-1/2 opacity-0 animate-[fadeIn_1s_ease-out_1.5s_forwards]">
+      {/* Side decorations - hidden on mobile for cleaner look */}
+      <div className="hidden md:block absolute left-8 top-1/2 transform -translate-y-1/2 opacity-0 animate-[fadeIn_1s_ease-out_1.5s_forwards]">
         <div className="flex flex-col gap-4">
           <div className="w-12 h-0.5 bg-red-600" />
           <div className="w-8 h-0.5 bg-red-500" />
@@ -209,7 +211,7 @@ const Hero = () => {
         </div>
       </div>
 
-      <div className="absolute right-8 top-1/2 transform -translate-y-1/2 opacity-0 animate-[fadeIn_1s_ease-out_1.5s_forwards]">
+      <div className="hidden md:block absolute right-8 top-1/2 transform -translate-y-1/2 opacity-0 animate-[fadeIn_1s_ease-out_1.5s_forwards]">
         <div className="flex flex-col gap-4">
           <div className="w-4 h-0.5 bg-red-400" />
           <div className="w-8 h-0.5 bg-red-500" />

@@ -99,7 +99,7 @@ const About = () => {
   return (
     <section
       id="about-section"
-      className="h-screen bg-black relative overflow-hidden flex items-center"
+      className="min-h-screen bg-black relative overflow-hidden flex items-center py-12 md:py-0"
     >
       {/* Dynamic Background */}
       <div className="absolute inset-0">
@@ -126,12 +126,12 @@ const About = () => {
               linear-gradient(rgba(220, 38, 38, 0.3) 1px, transparent 1px),
               linear-gradient(90deg, rgba(220, 38, 38, 0.3) 1px, transparent 1px)
             `,
-            backgroundSize: "60px 60px",
+            backgroundSize: "40px 40px",
           }}
         />
 
-        {/* Animated accent lines */}
-        <div className="absolute inset-0">
+        {/* Animated accent lines - hidden on mobile */}
+        <div className="absolute inset-0 hidden md:block">
           <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-red-500/40 to-transparent animate-pulse" />
           <div
             className="absolute top-3/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-red-600/30 to-transparent animate-pulse"
@@ -147,42 +147,42 @@ const About = () => {
           />
         </div>
 
-        {/* Corner accent circles */}
+        {/* Corner accent circles - smaller on mobile */}
         <div
-          className="absolute top-20 left-20 w-32 h-32 border border-red-900/20 rounded-full animate-spin"
+          className="absolute top-10 left-10 md:top-20 md:left-20 w-16 h-16 md:w-32 md:h-32 border border-red-900/20 rounded-full animate-spin"
           style={{ animationDuration: "30s" }}
         />
         <div
-          className="absolute bottom-20 right-20 w-48 h-48 border border-red-800/10 rounded-full animate-spin"
+          className="absolute bottom-10 right-10 md:bottom-20 md:right-20 w-24 h-24 md:w-48 md:h-48 border border-red-800/10 rounded-full animate-spin"
           style={{ animationDuration: "45s", animationDirection: "reverse" }}
         />
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 w-full">
+      <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 w-full">
         {/* Section Header */}
         <div
-          className={`text-center mb-16 transition-all duration-1000 ${
+          className={`text-center mb-8 md:mb-16 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <span className="text-red-400 text-sm uppercase tracking-[0.2em] font-medium mb-3 block">
+          <span className="text-red-400 text-xs md:text-sm uppercase tracking-[0.2em] font-medium mb-2 md:mb-3 block">
             Get To Know Me
           </span>
           <h2
-            className="text-5xl md:text-6xl font-black text-white mb-6"
+            className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-4 md:mb-6"
             style={{ fontFamily: "Rajdhani, sans-serif" }}
           >
             ABOUT
           </h2>
-          <div className="flex justify-center items-center gap-4">
-            <div className="w-16 h-0.5 bg-red-500" />
-            <div className="w-3 h-3 bg-red-500 rotate-45" />
-            <div className="w-16 h-0.5 bg-red-500" />
+          <div className="flex justify-center items-center gap-2 md:gap-4">
+            <div className="w-8 md:w-16 h-0.5 bg-red-500" />
+            <div className="w-2 h-2 md:w-3 md:h-3 bg-red-500 rotate-45" />
+            <div className="w-8 md:w-16 h-0.5 bg-red-500" />
           </div>
         </div>
 
         {/* Main Split Layout */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center h-full">
+        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
           {/* Left Side - Bold Content */}
           <div
             className={`transition-all duration-1000 ${
@@ -192,25 +192,25 @@ const About = () => {
             }`}
           >
             {/* Main Title */}
-            <div className="mb-12">
+            <div className="mb-8 md:mb-12">
               <h2
-                className="text-7xl md:text-8xl font-black text-white mb-6 leading-none"
+                className="text-4xl md:text-7xl lg:text-8xl font-black text-white mb-4 md:mb-6 leading-none"
                 style={{ fontFamily: "Rajdhani, sans-serif" }}
               >
                 <span className="block">ABOUT</span>
-                <span className="block text-red-500 transform -translate-y-4">
+                <span className="block text-red-500 transform -translate-y-2 md:-translate-y-4">
                   ME
                 </span>
               </h2>
-              <div className="flex items-center gap-4 mb-8">
-                <div className="w-20 h-1 bg-red-500" />
-                <div className="w-4 h-4 bg-red-500 rotate-45" />
+              <div className="flex items-center gap-2 md:gap-4 mb-6 md:mb-8">
+                <div className="w-12 md:w-20 h-0.5 md:h-1 bg-red-500" />
+                <div className="w-2 h-2 md:w-4 md:h-4 bg-red-500 rotate-45" />
               </div>
             </div>
 
             {/* Bio */}
-            <div className="space-y-8 text-xl text-gray-300 leading-relaxed mb-16">
-              <p className="text-2xl">
+            <div className="space-y-4 md:space-y-8 text-base md:text-xl lg:text-xl text-gray-300 leading-relaxed mb-8 md:mb-16">
+              <p className="text-lg md:text-2xl">
                 I'm{" "}
                 <span className="text-red-400 font-bold">
                   Christopher Peacock
@@ -221,13 +221,13 @@ const About = () => {
                 </span>
                 .
               </p>
-              <p className="text-lg">
+              <p className="text-sm md:text-lg">
                 Starting my coding journey in{" "}
                 <span className="text-red-400 font-bold">January 2024</span>, I
                 founded Opti Compliance by October - a SaaS platform
                 revolutionizing the fire risk assessment industry across the UK.
               </p>
-              <p className="text-lg">
+              <p className="text-sm md:text-lg">
                 I secured a position in the prestigious{" "}
                 <span className="text-red-400 font-bold">Alacrity Program</span>{" "}
                 against university graduates and earned Microsoft Security
@@ -237,16 +237,16 @@ const About = () => {
                 </span>
                 .
               </p>
-              <div className="flex items-center gap-4 pt-4">
-                <div className="w-12 h-1 bg-gradient-to-r from-red-500 to-red-600" />
-                <span className="text-red-400 text-sm uppercase tracking-widest font-semibold">
+              <div className="flex items-center gap-2 md:gap-4 pt-2 md:pt-4">
+                <div className="w-8 md:w-12 h-0.5 md:h-1 bg-gradient-to-r from-red-500 to-red-600" />
+                <span className="text-red-400 text-xs md:text-sm uppercase tracking-widest font-semibold">
                   Self-Taught Excellence
                 </span>
               </div>
             </div>
 
             {/* Key Stats */}
-            <div className="grid grid-cols-3 gap-8 mb-12">
+            <div className="grid grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-12">
               {[
                 { number: "9", label: "Months to SaaS" },
                 { number: "Top 6%", label: "TryHackMe" },
@@ -254,12 +254,12 @@ const About = () => {
               ].map((stat, index) => (
                 <div key={index} className="text-center group">
                   <div
-                    className="text-4xl font-black text-red-400 mb-2 group-hover:scale-110 transition-transform"
+                    className="text-2xl md:text-4xl font-black text-red-400 mb-1 md:mb-2 group-hover:scale-110 transition-transform"
                     style={{ fontFamily: "Rajdhani, sans-serif" }}
                   >
                     {stat.number}
                   </div>
-                  <div className="text-sm text-gray-400 uppercase tracking-wider">
+                  <div className="text-xs md:text-sm text-gray-400 uppercase tracking-wider">
                     {stat.label}
                   </div>
                 </div>
@@ -267,43 +267,43 @@ const About = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="flex items-center gap-6 mb-12">
-              <div className="flex items-center gap-2 text-gray-400">
-                <MapPin className="w-5 h-5 text-red-400" />
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 md:gap-6 mb-8 md:mb-12">
+              <div className="flex items-center gap-2 text-gray-400 text-sm md:text-base">
+                <MapPin className="w-4 h-4 md:w-5 md:h-5 text-red-400" />
                 <span>United Kingdom</span>
               </div>
-              <div className="flex gap-4">
-                <Github className="w-6 h-6 text-gray-400 hover:text-red-400 transition-colors cursor-pointer" />
-                <Linkedin className="w-6 h-6 text-gray-400 hover:text-red-400 transition-colors cursor-pointer" />
-                <Mail className="w-6 h-6 text-gray-400 hover:text-red-400 transition-colors cursor-pointer" />
+              <div className="flex gap-3 md:gap-4">
+                <Github className="w-5 h-5 md:w-6 md:h-6 text-gray-400 hover:text-red-400 transition-colors cursor-pointer" />
+                <Linkedin className="w-5 h-5 md:w-6 md:h-6 text-gray-400 hover:text-red-400 transition-colors cursor-pointer" />
+                <Mail className="w-5 h-5 md:w-6 md:h-6 text-gray-400 hover:text-red-400 transition-colors cursor-pointer" />
               </div>
             </div>
 
             {/* CTA */}
-            <button className="group bg-gradient-to-r from-red-600 to-red-700 text-white px-10 py-5 font-bold uppercase tracking-wider hover:scale-105 transition-all duration-300 flex items-center gap-4">
+            <button className="group bg-gradient-to-r from-red-600 to-red-700 text-white px-6 md:px-10 py-3 md:py-5 font-bold uppercase tracking-wider hover:scale-105 transition-all duration-300 flex items-center gap-2 md:gap-4 text-sm md:text-base w-full sm:w-auto justify-center">
               <span>Let's Work Together</span>
-              <ArrowRight className="w-6 h-6 group-hover:translate-x-2 transition-transform" />
+              <ArrowRight className="w-4 h-4 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform" />
             </button>
           </div>
 
-          {/* Right Side - Tech Stack Showcase */}
+          {/* Right Side - Tech Stack Showcase - Hidden on Mobile */}
           <div
-            className={`transition-all duration-1000 delay-500 ${
+            className={`hidden md:block transition-all duration-1000 delay-500 mt-8 lg:mt-0 ${
               isVisible
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 translate-x-10"
             }`}
           >
             {/* Tech Stack Header */}
-            <div className="mb-12">
+            <div className="mb-8 md:mb-12 text-center lg:text-left">
               <h3
-                className="text-4xl font-black text-white mb-4"
+                className="text-2xl md:text-4xl font-black text-white mb-2 md:mb-4"
                 style={{ fontFamily: "Rajdhani, sans-serif" }}
               >
                 TECH ARSENAL
               </h3>
-              <p className="text-gray-400 text-lg">
-                The tools I mastered in record time
+              <p className="text-gray-400 text-sm md:text-lg">
+                The tools I use
               </p>
             </div>
 
@@ -312,9 +312,7 @@ const About = () => {
               {techStack.map((tech, index) => (
                 <div
                   key={index}
-                  className={`group relative bg-gray-900/40 backdrop-blur-sm p-5 rounded-xl border border-gray-700/50 hover:border-red-500/70 transition-all duration-500 hover:scale-110 hover:-translate-y-2 delay-${
-                    index * 50
-                  }`}
+                  className={`group relative bg-gray-900/40 backdrop-blur-sm p-5 rounded-xl border border-gray-700/50 hover:border-red-500/70 transition-all duration-500 hover:scale-110 hover:-translate-y-2`}
                   style={{
                     animationDelay: `${index * 0.1}s`,
                   }}
@@ -353,7 +351,7 @@ const About = () => {
               <div className="relative flex items-center gap-4 bg-gray-900/30 backdrop-blur-sm px-8 py-4 rounded-full border border-gray-700/50">
                 <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-red-500" />
                 <div className="text-red-400 text-sm uppercase tracking-widest font-semibold">
-                  Self-Taught Master
+                  Self-Taught
                 </div>
                 <div className="w-8 h-0.5 bg-gradient-to-l from-transparent to-red-500" />
                 <div className="absolute inset-0 bg-red-500/5 rounded-full animate-pulse" />
@@ -363,9 +361,9 @@ const About = () => {
         </div>
       </div>
 
-      {/* Corner accents */}
-      <div className="absolute top-8 left-8 w-16 h-16 border-l-2 border-t-2 border-red-500/30" />
-      <div className="absolute bottom-8 right-8 w-16 h-16 border-r-2 border-b-2 border-red-500/30" />
+      {/* Corner accents - smaller on mobile */}
+      <div className="absolute top-4 left-4 md:top-8 md:left-8 w-8 h-8 md:w-16 md:h-16 border-l-2 border-t-2 border-red-500/30" />
+      <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 w-8 h-8 md:w-16 md:h-16 border-r-2 border-b-2 border-red-500/30" />
     </section>
   );
 };
