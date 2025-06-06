@@ -99,10 +99,10 @@ const About = () => {
   return (
     <section
       id="about-section"
-      className="min-h-screen bg-black relative overflow-hidden flex items-center py-12 md:py-0"
+      className="lg:min-h-screen bg-black relative overflow-hidden lg:flex lg:items-center py-8 md:py-12 isolate"
     >
-      {/* Dynamic Background */}
-      <div className="absolute inset-0">
+      {/* Dynamic Background - Fixed z-index */}
+      <div className="absolute inset-0 z-0">
         {/* Hero-style animated gradient */}
         <div
           className="absolute inset-0 opacity-20 transition-all duration-1000 ease-out"
@@ -158,10 +158,11 @@ const About = () => {
         />
       </div>
 
+      {/* Content Layer */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 w-full">
         {/* Section Header */}
         <div
-          className={`text-center mb-8 md:mb-16 transition-all duration-1000 ${
+          className={`text-center mb-6 md:mb-12 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
@@ -169,7 +170,7 @@ const About = () => {
             Get To Know Me
           </span>
           <h2
-            className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-4 md:mb-6"
+            className="text-3xl md:text-5xl lg:text-6xl font-black text-white mb-3 md:mb-6"
             style={{ fontFamily: "Rajdhani, sans-serif" }}
           >
             ABOUT
@@ -182,7 +183,7 @@ const About = () => {
         </div>
 
         {/* Main Split Layout */}
-        <div className="grid lg:grid-cols-2 gap-8 md:gap-16 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 md:gap-16 items-center">
           {/* Left Side - Bold Content */}
           <div
             className={`transition-all duration-1000 ${
@@ -192,25 +193,25 @@ const About = () => {
             }`}
           >
             {/* Main Title */}
-            <div className="mb-8 md:mb-12">
+            <div className="mb-6 md:mb-12">
               <h2
-                className="text-4xl md:text-7xl lg:text-8xl font-black text-white mb-4 md:mb-6 leading-none"
+                className="text-3xl md:text-7xl lg:text-8xl font-black text-white mb-3 md:mb-6 leading-none"
                 style={{ fontFamily: "Rajdhani, sans-serif" }}
               >
                 <span className="block">ABOUT</span>
-                <span className="block text-red-500 transform -translate-y-2 md:-translate-y-4">
+                <span className="block text-red-500 transform -translate-y-1 md:-translate-y-4">
                   ME
                 </span>
               </h2>
-              <div className="flex items-center gap-2 md:gap-4 mb-6 md:mb-8">
+              <div className="flex items-center gap-2 md:gap-4 mb-4 md:mb-8">
                 <div className="w-12 md:w-20 h-0.5 md:h-1 bg-red-500" />
                 <div className="w-2 h-2 md:w-4 md:h-4 bg-red-500 rotate-45" />
               </div>
             </div>
 
             {/* Bio */}
-            <div className="space-y-4 md:space-y-8 text-base md:text-xl lg:text-xl text-gray-300 leading-relaxed mb-8 md:mb-16">
-              <p className="text-lg md:text-2xl">
+            <div className="space-y-3 md:space-y-6 text-sm md:text-xl lg:text-xl text-gray-300 leading-relaxed mb-6 md:mb-12">
+              <p className="text-base md:text-2xl">
                 I'm{" "}
                 <span className="text-red-400 font-bold">
                   Christopher Peacock
@@ -246,7 +247,7 @@ const About = () => {
             </div>
 
             {/* Key Stats */}
-            <div className="grid grid-cols-3 gap-4 md:gap-8 mb-8 md:mb-12">
+            <div className="grid grid-cols-3 gap-3 md:gap-8 mb-6 md:mb-8">
               {[
                 { number: "9", label: "Months to SaaS" },
                 { number: "Top 6%", label: "TryHackMe" },
@@ -254,7 +255,7 @@ const About = () => {
               ].map((stat, index) => (
                 <div key={index} className="text-center group">
                   <div
-                    className="text-2xl md:text-4xl font-black text-red-400 mb-1 md:mb-2 group-hover:scale-110 transition-transform"
+                    className="text-lg md:text-4xl font-black text-red-400 mb-1 md:mb-2 group-hover:scale-110 transition-transform"
                     style={{ fontFamily: "Rajdhani, sans-serif" }}
                   >
                     {stat.number}
@@ -267,7 +268,7 @@ const About = () => {
             </div>
 
             {/* Contact Info */}
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 md:gap-6 mb-8 md:mb-12">
+            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-6 mb-6 md:mb-8">
               <div className="flex items-center gap-2 text-gray-400 text-sm md:text-base">
                 <MapPin className="w-4 h-4 md:w-5 md:h-5 text-red-400" />
                 <span>United Kingdom</span>
@@ -280,24 +281,24 @@ const About = () => {
             </div>
 
             {/* CTA */}
-            <button className="group bg-gradient-to-r from-red-600 to-red-700 text-white px-6 md:px-10 py-3 md:py-5 font-bold uppercase tracking-wider hover:scale-105 transition-all duration-300 flex items-center gap-2 md:gap-4 text-sm md:text-base w-full sm:w-auto justify-center">
+            <button className="group bg-gradient-to-r from-red-600 to-red-700 text-white px-4 md:px-10 py-3 md:py-5 font-bold uppercase tracking-wider hover:scale-105 transition-all duration-300 flex items-center gap-2 md:gap-4 text-sm md:text-base w-full sm:w-auto justify-center">
               <span>Let's Work Together</span>
               <ArrowRight className="w-4 h-4 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform" />
             </button>
           </div>
 
-          {/* Right Side - Tech Stack Showcase - Hidden on Mobile */}
+          {/* Right Side - Tech Stack Showcase */}
           <div
-            className={`hidden md:block transition-all duration-1000 delay-500 mt-8 lg:mt-0 ${
+            className={`transition-all duration-1000 delay-500 mt-6 lg:mt-0 ${
               isVisible
                 ? "opacity-100 translate-x-0"
                 : "opacity-0 translate-x-10"
             }`}
           >
             {/* Tech Stack Header */}
-            <div className="mb-8 md:mb-12 text-center lg:text-left">
+            <div className="mb-6 md:mb-12 text-center lg:text-left">
               <h3
-                className="text-2xl md:text-4xl font-black text-white mb-2 md:mb-4"
+                className="text-xl md:text-4xl font-black text-white mb-2 md:mb-4"
                 style={{ fontFamily: "Rajdhani, sans-serif" }}
               >
                 TECH ARSENAL
@@ -307,12 +308,12 @@ const About = () => {
               </p>
             </div>
 
-            {/* Animated Tech Grid */}
-            <div className="grid grid-cols-4 gap-6">
+            {/* Animated Tech Grid - Responsive for mobile */}
+            <div className="grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-6">
               {techStack.map((tech, index) => (
                 <div
                   key={index}
-                  className={`group relative bg-gray-900/40 backdrop-blur-sm p-5 rounded-xl border border-gray-700/50 hover:border-red-500/70 transition-all duration-500 hover:scale-110 hover:-translate-y-2`}
+                  className={`group relative bg-gray-900/40 backdrop-blur-sm p-3 md:p-5 rounded-xl border border-gray-700/50 hover:border-red-500/70 transition-all duration-500 hover:scale-110 hover:-translate-y-2`}
                   style={{
                     animationDelay: `${index * 0.1}s`,
                   }}
@@ -324,11 +325,11 @@ const About = () => {
                   />
 
                   <div className="relative z-10 text-center">
-                    <div className="mb-3 transform group-hover:scale-125 transition-transform duration-300">
+                    <div className="mb-2 md:mb-3 transform group-hover:scale-125 transition-transform duration-300">
                       <img
                         src={tech.icon}
                         alt={tech.name}
-                        className="w-10 h-10 mx-auto"
+                        className="w-6 md:w-10 h-6 md:h-10 mx-auto"
                         style={{ filter: "brightness(0.9) contrast(1.1)" }}
                       />
                     </div>
@@ -347,13 +348,13 @@ const About = () => {
             </div>
 
             {/* Enhanced bottom accent */}
-            <div className="mt-16 flex justify-center">
-              <div className="relative flex items-center gap-4 bg-gray-900/30 backdrop-blur-sm px-8 py-4 rounded-full border border-gray-700/50">
-                <div className="w-8 h-0.5 bg-gradient-to-r from-transparent to-red-500" />
-                <div className="text-red-400 text-sm uppercase tracking-widest font-semibold">
+            <div className="mt-8 md:mt-16 flex justify-center">
+              <div className="relative flex items-center gap-3 md:gap-4 bg-gray-900/30 backdrop-blur-sm px-4 md:px-8 py-3 md:py-4 rounded-full border border-gray-700/50">
+                <div className="w-6 md:w-8 h-0.5 bg-gradient-to-r from-transparent to-red-500" />
+                <div className="text-red-400 text-xs md:text-sm uppercase tracking-widest font-semibold">
                   Self-Taught
                 </div>
-                <div className="w-8 h-0.5 bg-gradient-to-l from-transparent to-red-500" />
+                <div className="w-6 md:w-8 h-0.5 bg-gradient-to-l from-transparent to-red-500" />
                 <div className="absolute inset-0 bg-red-500/5 rounded-full animate-pulse" />
               </div>
             </div>
@@ -362,8 +363,8 @@ const About = () => {
       </div>
 
       {/* Corner accents - smaller on mobile */}
-      <div className="absolute top-4 left-4 md:top-8 md:left-8 w-8 h-8 md:w-16 md:h-16 border-l-2 border-t-2 border-red-500/30" />
-      <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 w-8 h-8 md:w-16 md:h-16 border-r-2 border-b-2 border-red-500/30" />
+      <div className="absolute top-4 left-4 md:top-8 md:left-8 w-8 h-8 md:w-16 md:h-16 border-l-2 border-t-2 border-red-500/30 z-10" />
+      <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 w-8 h-8 md:w-16 md:h-16 border-r-2 border-b-2 border-red-500/30 z-10" />
     </section>
   );
 };

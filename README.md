@@ -2,8 +2,8 @@
 
 > Self-taught developer turned entrepreneur | From zero to SaaS founder in 9 months
 
-[![Live Demo](https://img.shields.io/badge/Live-Demo-red)](https://christopher-peacock-portfolio.vercel.app)
-[![GitHub](https://img.shields.io/badge/GitHub-Repository-black)](https://github.com/YOUR_USERNAME/christopher-peacock-portfolio)
+[![Live Demo](https://img.shields.io/badge/Live-Demo-red)](https://chrispportfolio.netlify.app/)
+[![GitHub](https://img.shields.io/badge/GitHub-Repository-black)](https://github.com/ChristopherPeacock)
 
 ## 🚀 About Christopher
 

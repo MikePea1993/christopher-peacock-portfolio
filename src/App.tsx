@@ -6,16 +6,16 @@ import Projects from "./components/Projects";
 function App() {
   return (
     <div
-      className="h-screen overflow-y-scroll snap-y snap-mandatory"
+      className="overflow-y-scroll lg:h-screen lg:snap-y lg:snap-mandatory"
       style={{ scrollBehavior: "smooth" }}
     >
-      <div className="h-screen snap-start snap-always">
+      <div className="lg:h-screen lg:snap-start lg:snap-always">
         <Hero />
       </div>
-      <div className="h-screen snap-start snap-always">
+      <div className="lg:h-screen lg:snap-start lg:snap-always">
         <About />
       </div>
-      <div className="h-screen snap-start snap-always">
+      <div className="lg:h-screen lg:snap-start lg:snap-always">
         <Projects />
       </div>
     </div>

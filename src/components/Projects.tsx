@@ -46,7 +46,7 @@ const Projects = () => {
     };
 
     const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < 768);
+      setIsMobile(window.innerWidth < 1024); // Changed from 768 to 1024 to include tablets
     };
 
     checkIsMobile();
@@ -190,9 +190,10 @@ const Projects = () => {
   return (
     <section
       id="projects-section"
-      className="h-screen bg-black relative overflow-hidden flex items-center py-4 md:py-0"
+      className="lg:h-screen bg-black relative overflow-hidden lg:flex lg:items-center py-8 md:py-4 isolate"
     >
-      <div className="absolute inset-0">
+      {/* Background Layer - Fixed z-index */}
+      <div className="absolute inset-0 z-0">
         <div
           className="absolute inset-0 opacity-20 transition-all duration-1000 ease-out"
           style={{
@@ -233,37 +234,38 @@ const Projects = () => {
         </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 w-full h-full flex flex-col justify-center">
+      {/* Content Layer */}
+      <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 w-full lg:h-full lg:flex lg:flex-col lg:justify-center">
         {/* Section Header */}
         <div
-          className={`text-center mb-6 md:mb-12 transition-all duration-1000 ${
+          className={`text-center mb-6 md:mb-8 transition-all duration-1000 ${
             isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-10"
           }`}
         >
-          <span className="text-red-400 text-sm uppercase tracking-[0.2em] font-medium mb-4 block">
+          <span className="text-red-400 text-sm uppercase tracking-[0.2em] font-medium mb-2 md:mb-4 block">
             Featured Work
           </span>
           <h2
-            className="text-4xl md:text-6xl lg:text-7xl font-black text-white mb-4 md:mb-6 leading-none"
+            className="text-3xl md:text-6xl lg:text-7xl font-black text-white mb-3 md:mb-6 leading-none"
             style={{ fontFamily: "Rajdhani, sans-serif" }}
           >
             <span className="block">MY</span>
-            <span className="block text-red-500 transform -translate-y-2 md:-translate-y-4">
+            <span className="block text-red-500 transform -translate-y-1 md:-translate-y-4">
               PROJECTS
             </span>
           </h2>
-          <div className="flex justify-center items-center gap-4 mb-4 md:mb-6">
+          <div className="flex justify-center items-center gap-4 mb-3 md:mb-6">
             <div className="w-12 md:w-16 h-1 bg-red-500" />
             <Star className="w-4 md:w-5 h-4 md:h-5 text-red-500" />
             <div className="w-12 md:w-16 h-1 bg-red-500" />
           </div>
-          <p className="text-gray-400 text-base md:text-lg max-w-2xl mx-auto px-4">
+          <p className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto px-4">
             From zero to SaaS founder in 9 months - here's my journey in code
           </p>
         </div>
 
         {/* Carousel Container */}
-        <div className="relative flex-1 flex flex-col items-center">
+        <div className="relative lg:flex-1 lg:flex lg:flex-col lg:items-center">
           {/* Main Carousel Content */}
           <div className="relative w-full">
             {/* Navigation Buttons - Hidden on Mobile */}
@@ -271,14 +273,14 @@ const Projects = () => {
               <>
                 <button
                   onClick={prevSlide}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 z-10 bg-gray-900/80 backdrop-blur-sm p-3 rounded-full border border-gray-600 hover:border-red-500 hover:bg-red-500/20 transition-all duration-300 -translate-x-4"
+                  className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-gray-900/80 backdrop-blur-sm p-3 rounded-full border border-gray-600 hover:border-red-500 hover:bg-red-500/20 transition-all duration-300 -translate-x-4"
                 >
                   <ChevronLeft className="w-6 h-6 text-white" />
                 </button>
 
                 <button
                   onClick={nextSlide}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 z-10 bg-gray-900/80 backdrop-blur-sm p-3 rounded-full border border-gray-600 hover:border-red-500 hover:bg-red-500/20 transition-all duration-300 translate-x-4"
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-gray-900/80 backdrop-blur-sm p-3 rounded-full border border-gray-600 hover:border-red-500 hover:bg-red-500/20 transition-all duration-300 translate-x-4"
                 >
                   <ChevronRight className="w-6 h-6 text-white" />
                 </button>
@@ -299,7 +301,7 @@ const Projects = () => {
                     key={project.id}
                     className="w-full flex-shrink-0 px-2 md:px-4"
                   >
-                    <div className="grid lg:grid-cols-2 gap-4 md:gap-12 items-center max-w-6xl mx-auto min-h-[60vh] md:min-h-0">
+                    <div className="grid lg:grid-cols-2 gap-4 md:gap-12 items-center max-w-6xl mx-auto">
                       {/* Project Image */}
                       <div
                         className={`relative group ${
@@ -310,7 +312,7 @@ const Projects = () => {
                           <img
                             src={project.image}
                             alt={project.title}
-                            className="w-full h-48 md:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
+                            className="w-full h-40 md:h-80 lg:h-96 object-cover transition-transform duration-700 group-hover:scale-110"
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
@@ -318,28 +320,28 @@ const Projects = () => {
                           <div className="absolute inset-0 flex items-center justify-center gap-4 md:gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <a
                               href={project.github}
-                              className="bg-gray-900/80 backdrop-blur-sm p-3 md:p-4 rounded-full border border-gray-600 hover:border-red-500 hover:bg-red-500/20 transition-all duration-300"
+                              className="bg-gray-900/80 backdrop-blur-sm p-2 md:p-4 rounded-full border border-gray-600 hover:border-red-500 hover:bg-red-500/20 transition-all duration-300"
                             >
-                              <Github className="w-5 md:w-6 h-5 md:h-6 text-white" />
+                              <Github className="w-4 md:w-6 h-4 md:h-6 text-white" />
                             </a>
                             <a
                               href={project.live}
-                              className="bg-red-600/80 backdrop-blur-sm p-3 md:p-4 rounded-full border border-red-500 hover:bg-red-500 transition-all duration-300"
+                              className="bg-red-600/80 backdrop-blur-sm p-2 md:p-4 rounded-full border border-red-500 hover:bg-red-500 transition-all duration-300"
                             >
-                              <ExternalLink className="w-5 md:w-6 h-5 md:h-6 text-white" />
+                              <ExternalLink className="w-4 md:w-6 h-4 md:h-6 text-white" />
                             </a>
                           </div>
 
                           {/* Project Number */}
-                          <div className="absolute top-4 md:top-6 right-4 md:right-6 w-10 md:w-12 h-10 md:h-12 bg-red-500 rounded-full flex items-center justify-center">
-                            <span className="text-white font-bold text-sm md:text-lg">
+                          <div className="absolute top-3 md:top-6 right-3 md:right-6 w-8 md:w-12 h-8 md:h-12 bg-red-500 rounded-full flex items-center justify-center">
+                            <span className="text-white font-bold text-xs md:text-lg">
                               {String(index + 1).padStart(2, "0")}
                             </span>
                           </div>
 
                           {/* Timeline Badge */}
                           {project.id === 1 && (
-                            <div className="absolute top-4 md:top-6 left-4 md:left-6 bg-red-500/90 backdrop-blur-sm px-2 md:px-3 py-1 rounded-full">
+                            <div className="absolute top-3 md:top-6 left-3 md:left-6 bg-red-500/90 backdrop-blur-sm px-2 md:px-3 py-1 rounded-full">
                               <span className="text-white text-xs font-bold uppercase tracking-wider">
                                 Founded 2024
                               </span>
@@ -354,25 +356,25 @@ const Projects = () => {
                           index % 2 === 0 ? "lg:order-2" : "lg:order-1"
                         } order-2`}
                       >
-                        <div className="mb-3 md:mb-4">
+                        <div className="mb-2 md:mb-4">
                           <span className="text-red-400 text-xs md:text-sm uppercase tracking-wider font-semibold">
                             {project.subtitle}
                           </span>
                         </div>
 
                         <h3
-                          className="text-2xl md:text-4xl lg:text-5xl font-black text-white mb-4 md:mb-6 leading-tight"
+                          className="text-xl md:text-4xl lg:text-5xl font-black text-white mb-3 md:mb-6 leading-tight"
                           style={{ fontFamily: "Rajdhani, sans-serif" }}
                         >
                           {project.title}
                         </h3>
 
-                        <p className="text-gray-300 text-sm md:text-lg leading-relaxed mb-6 md:mb-8">
+                        <p className="text-gray-300 text-sm md:text-lg leading-relaxed mb-4 md:mb-8">
                           {project.description}
                         </p>
 
                         {/* Stats */}
-                        <div className="grid grid-cols-3 gap-3 md:gap-6 mb-6 md:mb-8">
+                        <div className="grid grid-cols-3 gap-2 md:gap-6 mb-4 md:mb-8">
                           {Object.entries(project.stats).map(
                             ([key, value], statIndex) => (
                               <div
@@ -380,7 +382,7 @@ const Projects = () => {
                                 className="text-center bg-gray-900/30 backdrop-blur-sm p-2 md:p-4 rounded-lg border border-gray-700/50"
                               >
                                 <div
-                                  className="text-red-400 font-bold text-sm md:text-lg mb-1"
+                                  className="text-red-400 font-bold text-xs md:text-lg mb-1"
                                   style={{ fontFamily: "Rajdhani, sans-serif" }}
                                 >
                                   {value}
@@ -394,20 +396,20 @@ const Projects = () => {
                         </div>
 
                         {/* Tech Stack with Icons */}
-                        <div className="mb-6 md:mb-8">
-                          <h4 className="text-red-400 font-semibold mb-3 md:mb-4 uppercase tracking-wider text-xs md:text-sm">
+                        <div className="mb-4 md:mb-8">
+                          <h4 className="text-red-400 font-semibold mb-2 md:mb-4 uppercase tracking-wider text-xs md:text-sm">
                             Tech Stack
                           </h4>
                           <div className="flex flex-wrap gap-2 md:gap-4">
                             {project.tech.map((tech, techIndex) => (
                               <div
                                 key={techIndex}
-                                className="group bg-gray-900/40 backdrop-blur-sm p-2 md:p-3 rounded-lg border border-gray-700/50 hover:border-red-500/70 transition-all duration-300 hover:scale-110"
+                                className="group bg-gray-900/40 backdrop-blur-sm p-1.5 md:p-3 rounded-lg border border-gray-700/50 hover:border-red-500/70 transition-all duration-300 hover:scale-110"
                               >
                                 <img
                                   src={techIcons[tech]}
                                   alt={tech}
-                                  className="w-6 md:w-8 h-6 md:h-8 mx-auto mb-1 md:mb-2 group-hover:scale-125 transition-transform duration-300"
+                                  className="w-5 md:w-8 h-5 md:h-8 mx-auto mb-1 md:mb-2 group-hover:scale-125 transition-transform duration-300"
                                 />
                                 <div className="text-xs text-gray-400 group-hover:text-white transition-colors text-center font-medium">
                                   {tech}
@@ -417,26 +419,24 @@ const Projects = () => {
                           </div>
                         </div>
 
-                        {/* Action Buttons - Hidden on Mobile */}
-                        {!isMobile && (
-                          <div className="flex gap-4">
-                            <a
-                              href={project.github}
-                              className="flex items-center gap-3 bg-gray-800/50 hover:bg-gray-700 text-gray-300 hover:text-white px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 border border-gray-600 hover:border-red-500"
-                            >
-                              <Code className="w-5 h-5" />
-                              <span>View Details</span>
-                            </a>
-                            <a
-                              href={project.live}
-                              className="flex items-center gap-3 bg-red-600 hover:bg-red-500 text-white px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 group/btn"
-                            >
-                              <Zap className="w-5 h-5" />
-                              <span>Learn More</span>
-                              <ArrowRight className="w-5 h-5 group-hover/btn:translate-x-1 transition-transform" />
-                            </a>
-                          </div>
-                        )}
+                        {/* Action Buttons */}
+                        <div className="flex flex-col sm:flex-row gap-3 md:gap-4">
+                          <a
+                            href={project.github}
+                            className="flex items-center justify-center gap-3 bg-gray-800/50 hover:bg-gray-700 text-gray-300 hover:text-white px-4 md:px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 border border-gray-600 hover:border-red-500"
+                          >
+                            <Code className="w-4 md:w-5 h-4 md:h-5" />
+                            <span>View Details</span>
+                          </a>
+                          <a
+                            href={project.live}
+                            className="flex items-center justify-center gap-3 bg-red-600 hover:bg-red-500 text-white px-4 md:px-6 py-3 rounded-lg text-sm font-medium transition-all duration-300 group/btn"
+                          >
+                            <Zap className="w-4 md:w-5 h-4 md:h-5" />
+                            <span>Learn More</span>
+                            <ArrowRight className="w-4 md:w-5 h-4 md:h-5 group-hover/btn:translate-x-1 transition-transform" />
+                          </a>
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -446,16 +446,7 @@ const Projects = () => {
           </div>
 
           {/* Carousel Indicators - Fixed positioning */}
-          <div
-            className={`
-            flex justify-center gap-2 md:gap-3 mt-4 md:mt-8
-            ${
-              isMobile
-                ? "absolute bottom-4 left-1/2 transform -translate-x-1/2"
-                : "relative"
-            }
-          `}
-          >
+          <div className="flex justify-center gap-2 md:gap-3 mt-4 md:mt-8 relative z-20">
             {projects.map((_, index) => (
               <button
                 key={index}
@@ -472,8 +463,8 @@ const Projects = () => {
       </div>
 
       {/* Corner accents */}
-      <div className="absolute top-4 md:top-8 left-4 md:left-8 w-12 md:w-16 h-12 md:h-16 border-l-2 border-t-2 border-red-500/30" />
-      <div className="absolute bottom-4 md:bottom-8 right-4 md:right-8 w-12 md:w-16 h-12 md:h-16 border-r-2 border-b-2 border-red-500/30" />
+      <div className="absolute top-4 md:top-8 left-4 md:left-8 w-12 md:w-16 h-12 md:h-16 border-l-2 border-t-2 border-red-500/30 z-10" />
+      <div className="absolute bottom-4 md:bottom-8 right-4 md:right-8 w-12 md:w-16 h-12 md:h-16 border-r-2 border-b-2 border-red-500/30 z-10" />
     </section>
   );
 };
