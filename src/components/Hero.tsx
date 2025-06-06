@@ -89,7 +89,7 @@ const Hero = () => {
           </span>
         </div>
 
-        {/* Main heading with dramatic effect */}
+        {/* Main heading with effect */}
         <h1
           className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl xl:text-9xl font-black mb-6 sm:mb-8 opacity-0 animate-[fadeInUp_1s_ease-out_0.4s_forwards] leading-none"
           style={{ fontFamily: "Rajdhani, sans-serif" }}
@@ -149,7 +149,7 @@ const Hero = () => {
           </div>
         </div>
 
-        {/* CTA Buttons - mobile-friendly stacking */}
+        {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center opacity-0 animate-[fadeInUp_0.8s_ease-out_1.2s_forwards] px-2">
           <button className="group relative px-6 sm:px-10 py-4 sm:py-5 bg-gradient-to-r from-red-600 to-red-700 text-white font-bold text-base sm:text-lg rounded-none uppercase tracking-wider transition-all duration-300 hover:scale-105 overflow-hidden w-full sm:w-auto">
             <span className="relative z-10 flex items-center justify-center gap-3">
@@ -202,7 +202,7 @@ const Hero = () => {
         </div>
       </div>
 
-      {/* Side decorations - hidden on mobile for cleaner look */}
+      {/* Side decorations*/}
       <div className="hidden md:block absolute left-8 top-1/2 transform -translate-y-1/2 opacity-0 animate-[fadeIn_1s_ease-out_1.5s_forwards]">
         <div className="flex flex-col gap-4">
           <div className="w-12 h-0.5 bg-red-600" />

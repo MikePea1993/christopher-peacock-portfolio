@@ -101,9 +101,8 @@ const About = () => {
       id="about-section"
       className="lg:min-h-screen bg-black relative overflow-hidden lg:flex lg:items-center py-8 md:py-12 isolate"
     >
-      {/* Dynamic Background - Fixed z-index */}
+      {/* Background */}
       <div className="absolute inset-0 z-0">
-        {/* Hero-style animated gradient */}
         <div
           className="absolute inset-0 opacity-20 transition-all duration-1000 ease-out"
           style={{
@@ -118,7 +117,6 @@ const About = () => {
           }}
         />
 
-        {/* Geometric grid pattern */}
         <div
           className="absolute inset-0 opacity-5"
           style={{
@@ -130,7 +128,6 @@ const About = () => {
           }}
         />
 
-        {/* Animated accent lines - hidden on mobile */}
         <div className="absolute inset-0 hidden md:block">
           <div className="absolute top-1/4 left-0 w-full h-px bg-gradient-to-r from-transparent via-red-500/40 to-transparent animate-pulse" />
           <div
@@ -147,7 +144,6 @@ const About = () => {
           />
         </div>
 
-        {/* Corner accent circles - smaller on mobile */}
         <div
           className="absolute top-10 left-10 md:top-20 md:left-20 w-16 h-16 md:w-32 md:h-32 border border-red-900/20 rounded-full animate-spin"
           style={{ animationDuration: "30s" }}
@@ -158,7 +154,6 @@ const About = () => {
         />
       </div>
 
-      {/* Content Layer */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 w-full">
         {/* Section Header */}
         <div
@@ -182,9 +177,9 @@ const About = () => {
           </div>
         </div>
 
-        {/* Main Split Layout */}
+        {/* Main Content */}
         <div className="grid lg:grid-cols-2 gap-6 md:gap-16 items-center">
-          {/* Left Side - Bold Content */}
+          {/* Personal Info */}
           <div
             className={`transition-all duration-1000 ${
               isVisible
@@ -192,7 +187,6 @@ const About = () => {
                 : "opacity-0 -translate-x-10"
             }`}
           >
-            {/* Main Title */}
             <div className="mb-6 md:mb-12">
               <h2
                 className="text-3xl md:text-7xl lg:text-8xl font-black text-white mb-3 md:mb-6 leading-none"
@@ -209,7 +203,6 @@ const About = () => {
               </div>
             </div>
 
-            {/* Bio */}
             <div className="space-y-3 md:space-y-6 text-sm md:text-xl lg:text-xl text-gray-300 leading-relaxed mb-6 md:mb-12">
               <p className="text-base md:text-2xl">
                 I'm{" "}
@@ -246,7 +239,7 @@ const About = () => {
               </div>
             </div>
 
-            {/* Key Stats */}
+            {/* Stats */}
             <div className="grid grid-cols-3 gap-3 md:gap-8 mb-6 md:mb-8">
               {[
                 { number: "9", label: "Months to SaaS" },
@@ -267,7 +260,7 @@ const About = () => {
               ))}
             </div>
 
-            {/* Contact Info */}
+            {/* Contact */}
             <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 md:gap-6 mb-6 md:mb-8">
               <div className="flex items-center gap-2 text-gray-400 text-sm md:text-base">
                 <MapPin className="w-4 h-4 md:w-5 md:h-5 text-red-400" />
@@ -280,14 +273,13 @@ const About = () => {
               </div>
             </div>
 
-            {/* CTA */}
             <button className="group bg-gradient-to-r from-red-600 to-red-700 text-white px-4 md:px-10 py-3 md:py-5 font-bold uppercase tracking-wider hover:scale-105 transition-all duration-300 flex items-center gap-2 md:gap-4 text-sm md:text-base w-full sm:w-auto justify-center">
               <span>Let's Work Together</span>
               <ArrowRight className="w-4 h-4 md:w-6 md:h-6 group-hover:translate-x-2 transition-transform" />
             </button>
           </div>
 
-          {/* Right Side - Tech Stack Showcase */}
+          {/* Tech Stack */}
           <div
             className={`transition-all duration-1000 delay-500 mt-6 lg:mt-0 ${
               isVisible
@@ -295,7 +287,6 @@ const About = () => {
                 : "opacity-0 translate-x-10"
             }`}
           >
-            {/* Tech Stack Header */}
             <div className="mb-6 md:mb-12 text-center lg:text-left">
               <h3
                 className="text-xl md:text-4xl font-black text-white mb-2 md:mb-4"
@@ -308,7 +299,6 @@ const About = () => {
               </p>
             </div>
 
-            {/* Animated Tech Grid - Responsive for mobile */}
             <div className="grid grid-cols-3 md:grid-cols-4 gap-3 md:gap-6">
               {techStack.map((tech, index) => (
                 <div
@@ -318,7 +308,6 @@ const About = () => {
                     animationDelay: `${index * 0.1}s`,
                   }}
                 >
-                  {/* Single outer glow effect */}
                   <div
                     className="absolute inset-0 rounded-xl opacity-0 group-hover:opacity-30 transition-opacity duration-500 blur-xl"
                     style={{ backgroundColor: tech.color }}
@@ -337,7 +326,6 @@ const About = () => {
                       {tech.name}
                     </div>
 
-                    {/* Clean animated border */}
                     <div
                       className="absolute inset-0 rounded-xl border-2 border-transparent group-hover:animate-pulse"
                       style={{ borderColor: `${tech.color}30` }}
@@ -347,7 +335,6 @@ const About = () => {
               ))}
             </div>
 
-            {/* Enhanced bottom accent */}
             <div className="mt-8 md:mt-16 flex justify-center">
               <div className="relative flex items-center gap-3 md:gap-4 bg-gray-900/30 backdrop-blur-sm px-4 md:px-8 py-3 md:py-4 rounded-full border border-gray-700/50">
                 <div className="w-6 md:w-8 h-0.5 bg-gradient-to-r from-transparent to-red-500" />
@@ -362,7 +349,7 @@ const About = () => {
         </div>
       </div>
 
-      {/* Corner accents - smaller on mobile */}
+      {/* Corner accents */}
       <div className="absolute top-4 left-4 md:top-8 md:left-8 w-8 h-8 md:w-16 md:h-16 border-l-2 border-t-2 border-red-500/30 z-10" />
       <div className="absolute bottom-4 right-4 md:bottom-8 md:right-8 w-8 h-8 md:w-16 md:h-16 border-r-2 border-b-2 border-red-500/30 z-10" />
     </section>

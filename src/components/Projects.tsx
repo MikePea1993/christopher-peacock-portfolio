@@ -18,8 +18,7 @@ const Projects = () => {
   const [touchStart, setTouchStart] = useState<number | null>(null);
   const [touchEnd, setTouchEnd] = useState<number | null>(null);
 
-  // set minimum swipe distance
-  const minSwipeDistance = 50; // px
+  const minSwipeDistance = 50;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -46,12 +45,11 @@ const Projects = () => {
     };
 
     const checkIsMobile = () => {
-      setIsMobile(window.innerWidth < 1024); // Changed from 768 to 1024 to include tablets
+      setIsMobile(window.innerWidth < 1024);
     };
 
     checkIsMobile();
 
-    // event listeners
     window.addEventListener("mousemove", handleMouseMove);
     window.addEventListener("resize", checkIsMobile);
 
@@ -61,7 +59,6 @@ const Projects = () => {
     };
   }, []);
 
-  // Touch handlers for swipe functionality on mobile
   const onTouchStart = (e: React.TouchEvent) => {
     if (!isMobile) return;
     setTouchEnd(null);
@@ -87,7 +84,6 @@ const Projects = () => {
     }
   };
 
-  // Tech icon mapping
   const techIcons: { [key: string]: string } = {
     "Vue.js":
       "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg",
@@ -192,7 +188,7 @@ const Projects = () => {
       id="projects-section"
       className="lg:h-screen bg-black relative overflow-hidden lg:flex lg:items-center py-8 md:py-4 isolate"
     >
-      {/* Background Layer - Fixed z-index */}
+      {/* Background */}
       <div className="absolute inset-0 z-0">
         <div
           className="absolute inset-0 opacity-20 transition-all duration-1000 ease-out"
@@ -208,7 +204,6 @@ const Projects = () => {
           }}
         />
 
-        {/* Animated tech pattern */}
         <div className="absolute inset-0">
           <div className="absolute top-1/4 left-1/4 w-2 h-2 bg-red-500 rounded-full animate-pulse opacity-30" />
           <div
@@ -221,7 +216,6 @@ const Projects = () => {
           />
         </div>
 
-        {/* Flowing lines */}
         <div className="absolute inset-0 overflow-hidden">
           <div
             className="absolute -top-1/2 -left-1/2 w-full h-full border border-red-900/10 rounded-full animate-spin"
@@ -234,7 +228,6 @@ const Projects = () => {
         </div>
       </div>
 
-      {/* Content Layer */}
       <div className="max-w-7xl mx-auto px-4 md:px-6 relative z-10 w-full lg:h-full lg:flex lg:flex-col lg:justify-center">
         {/* Section Header */}
         <div
@@ -265,22 +258,21 @@ const Projects = () => {
         </div>
 
         {/* Carousel Container */}
-        <div className="relative lg:flex-1 lg:flex lg:flex-col lg:items-center">
-          {/* Main Carousel Content */}
+        <div className="relative lg:flex-1 lg:flex lg:flex-col lg:items-center lg:justify-center">
           <div className="relative w-full">
-            {/* Navigation Buttons - Hidden on Mobile */}
+            {/* Navigation Buttons */}
             {!isMobile && (
               <>
                 <button
                   onClick={prevSlide}
-                  className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-gray-900/80 backdrop-blur-sm p-3 rounded-full border border-gray-600 hover:border-red-500 hover:bg-red-500/20 transition-all duration-300 -translate-x-4"
+                  className="absolute left-0 top-1/2 -translate-y-1/2 z-20 bg-gray-900/80 backdrop-blur-sm p-3 rounded-full border border-gray-600 hover:border-red-500 hover:bg-red-500/20 transition-all duration-300 -translate-x-8"
                 >
                   <ChevronLeft className="w-6 h-6 text-white" />
                 </button>
 
                 <button
                   onClick={nextSlide}
-                  className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-gray-900/80 backdrop-blur-sm p-3 rounded-full border border-gray-600 hover:border-red-500 hover:bg-red-500/20 transition-all duration-300 translate-x-4"
+                  className="absolute right-0 top-1/2 -translate-y-1/2 z-20 bg-gray-900/80 backdrop-blur-sm p-3 rounded-full border border-gray-600 hover:border-red-500 hover:bg-red-500/20 transition-all duration-300 translate-x-8"
                 >
                   <ChevronRight className="w-6 h-6 text-white" />
                 </button>
@@ -316,7 +308,6 @@ const Projects = () => {
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/20 to-transparent" />
 
-                          {/* Overlay Actions */}
                           <div className="absolute inset-0 flex items-center justify-center gap-4 md:gap-6 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
                             <a
                               href={project.github}
@@ -332,14 +323,12 @@ const Projects = () => {
                             </a>
                           </div>
 
-                          {/* Project Number */}
                           <div className="absolute top-3 md:top-6 right-3 md:right-6 w-8 md:w-12 h-8 md:h-12 bg-red-500 rounded-full flex items-center justify-center">
                             <span className="text-white font-bold text-xs md:text-lg">
                               {String(index + 1).padStart(2, "0")}
                             </span>
                           </div>
 
-                          {/* Timeline Badge */}
                           {project.id === 1 && (
                             <div className="absolute top-3 md:top-6 left-3 md:left-6 bg-red-500/90 backdrop-blur-sm px-2 md:px-3 py-1 rounded-full">
                               <span className="text-white text-xs font-bold uppercase tracking-wider">
@@ -395,7 +384,7 @@ const Projects = () => {
                           )}
                         </div>
 
-                        {/* Tech Stack with Icons */}
+                        {/* Tech Stack */}
                         <div className="mb-4 md:mb-8">
                           <h4 className="text-red-400 font-semibold mb-2 md:mb-4 uppercase tracking-wider text-xs md:text-sm">
                             Tech Stack
@@ -445,7 +434,7 @@ const Projects = () => {
             </div>
           </div>
 
-          {/* Carousel Indicators - Fixed positioning */}
+          {/* Carousel Indicators */}
           <div className="flex justify-center gap-2 md:gap-3 mt-4 md:mt-8 relative z-20">
             {projects.map((_, index) => (
               <button
